@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Brilliun's Blog]]></title>
-  <link href="http://brilliun.github.com/atom.xml" rel="self"/>
+  <title><![CDATA[Category: Ruby | Brilliun's Blog]]></title>
+  <link href="http://brilliun.github.com/blog/categories/ruby/atom.xml" rel="self"/>
   <link href="http://brilliun.github.com/"/>
   <updated>2012-11-14T23:05:18+08:00</updated>
   <id>http://brilliun.github.com/</id>
@@ -47,7 +47,7 @@ timeout=      # A method invoked by assignment
 </ol>
 
 
-<p>Be careful about the &#8220;newline terminator&#8221; when your statement doesn&#8217;t fit on a single line.
+<p>Be careful about the "newline terminator" when your statement doesn't fit on a single line.
 For example:</p>
 
 <pre><code>total = x +    # Incomplete expression, parsing continues
