@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-
   <title><![CDATA[Brilliun's Blog]]></title>
   <link href="http://brilliun.github.com/atom.xml" rel="self"/>
   <link href="http://brilliun.github.com/"/>
-  <updated>2012-11-14T23:33:47+08:00</updated>
+  <updated>2012-11-16T02:30:49+08:00</updated>
   <id>http://brilliun.github.com/</id>
   <author>
     <name><![CDATA[brilliun]]></name>
@@ -13,12 +12,18 @@
   <generator uri="http://octopress.org/">Octopress</generator>
 
   
-  <entry>
-    <title type="html"><![CDATA[The Ruby Programming Language - Chapter 2]]></title>
-    <link href="http://brilliun.github.com/blog/2012/11/14/the-ruby-programming-language-chapter-2/"/>
-    <updated>2012-11-14T20:39:00+08:00</updated>
-    <id>http://brilliun.github.com/blog/2012/11/14/the-ruby-programming-language-chapter-2</id>
-    <content type="html"><![CDATA[<h2>Identifiers</h2>
+    <entry>
+      
+
+
+
+
+<title type="html"><![CDATA[The Ruby Programming Language - Chapter 2]]></title>
+<link href="http://brilliun.github.com/2012/11/14/the-ruby-programming-language-chapter-2/"/>
+<updated>2012-11-14T20:39:00+08:00</updated>
+<id>http://brilliun.github.com/2012/11/14/the-ruby-programming-language-chapter-2</id>
+
+      <content type="html"><![CDATA[<h2>Identifiers</h2>
 
 <p>Identifiers that begin with a captial letter A-Z are constants, and the Ruby interpreter will issue a warning (but not an error) if you alter the value of such an identifier.</p>
 
@@ -65,7 +70,7 @@ For example:</p>
 <pre><code>total = x \
   + y
 </code></pre>
-]]></content>
-  </entry>
+<p><a rel="bookmark" href="http://brilliun.github.com/2012/11/14/the-ruby-programming-language-chapter-2/">&#9875; Permalink</a></p>]]></content>
+    </entry>
   
 </feed>
