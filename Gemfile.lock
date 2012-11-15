@@ -37,6 +37,7 @@ GEM
       rack
     rake (0.9.2.2)
     rake-minify (0.3.3)
+      jsmin (~> 1.0.1)
       rake (>= 0.8.7)
     rb-fsevent (0.9.1)
     rdiscount (1.6.8)
