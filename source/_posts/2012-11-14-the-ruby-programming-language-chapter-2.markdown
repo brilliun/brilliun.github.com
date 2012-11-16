@@ -3,7 +3,8 @@ layout: post
 title: "The Ruby Programming Language - Chapter 2"
 date: 2012-11-14 20:39
 comments: true
-categories: [Ruby, Reading]
+categories: [Reading]
+tags: [Ruby]
 ---
 
 
@@ -13,13 +14,14 @@ Identifiers that begin with a captial letter A-Z are constants, and the Ruby int
 
 ### Punctuation in identifiers
 
-    $files        # A global variable
-	@data         # An instance variable
-	@@counter     # A class variable
-	empty?        # A boolean-valued method or predicate
-	sort!         # A mutator method that alter the object
-	timeout=      # A method invoked by assignment
-
+``` ruby
+$files        # A global variable
+@data         # An instance variable
+@@counter     # A class variable
+empty?        # A boolean-valued method or predicate
+sort!         # A mutator method that alter the object
+timeout=      # A method invoked by assignment
+```
 
 
 ## Whitespaces
@@ -37,17 +39,20 @@ Without explicit semicolons, Ruby interpreter figure out on its own where statem
 
 Be careful about the "newline terminator" when your statement doesn't fit on a single line. 
 For example:
-
-    total = x +    # Incomplete expression, parsing continues
-	  y            # Adds x and y and assigns the sum to total
-	  
+```
+total = x +    # Incomplete expression, parsing continues
+  y            # Adds x and y and assigns the sum to total
+```
 While in another case:
 
-    total = x    # This is a complete expression
-	  + y        # A useless but complete expression
-	  
+```
+total = x    # This is a complete expression
+  + y        # A useless but complete expression
+```
+
 Escaping a line break with a blackslash can safely prevent unexpected terminating:
 
-    total = x \
-	  + y
-
+```
+total = x \
+  + y
+```
