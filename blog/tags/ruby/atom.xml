@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Tag: Ruby | Brilliun]]></title>
+  <link href="http://brilliun.github.com/blog/tags/ruby/atom.xml" rel="self"/>
+  <link href="http://brilliun.github.com/"/>
+  <updated>2012-11-17T00:40:38+08:00</updated>
+  <id>http://brilliun.github.com/</id>
+  <author>
+    <name><![CDATA[brilliun]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[The Ruby Programming Language - Chapter 2]]></title>
+    <link href="http://brilliun.github.com/2012/11/14/the-ruby-programming-language-chapter-2/"/>
+    <updated>2012-11-14T20:39:00+08:00</updated>
+    <id>http://brilliun.github.com/2012/11/14/the-ruby-programming-language-chapter-2</id>
+    <content type="html"><![CDATA[<h2>Identifiers</h2>
+
+<p>Identifiers that begin with a captial letter A-Z are constants, and the Ruby interpreter will issue a warning (but not an error) if you alter the value of such an identifier.</p>
+
+<h3>Punctuation in identifiers</h3>
+
+<p><code>ruby
+$files        # A global variable
+@data         # An instance variable
+@@counter     # A class variable
+empty?        # A boolean-valued method or predicate
+sort!         # A mutator method that alter the object
+timeout=      # A method invoked by assignment
+</code></p>
+
+<h2>Whitespaces</h2>
+
+<h3>Newlines as statement terminators</h3>
+
+<p>Semicolons are not required to terminate statements. It can be omitted.</p>
+
+<p>Without explicit semicolons, Ruby interpreter figure out on its own where statements end:</p>
+
+<ol>
+<li>For a syntactically complete statement, Ruby uses the newline as the terminator;</li>
+<li>If the statement is not complete, Ruby continues parsing the statement on the next line.</li>
+<li>(For Ruby 1.9) If the first character on a line is a period(.), then the line is considered a continuation line.</li>
+</ol>
+
+
+<p>Be careful about the "newline terminator" when your statement doesn't fit on a single line.
+For example:
+<code>
+total = x +    # Incomplete expression, parsing continues
+  y            # Adds x and y and assigns the sum to total
+</code>
+While in another case:</p>
+
+<p><code>
+total = x    # This is a complete expression
+  + y        # A useless but complete expression
+</code></p>
+
+<p>Escaping a line break with a blackslash can safely prevent unexpected terminating:</p>
+
+<p><code>
+total = x \
+  + y
+</code></p>
+]]></content>
+  </entry>
+  
+</feed>
