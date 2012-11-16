@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title><![CDATA[Brilliun's Blog]]></title>
+  <title><![CDATA[Brilliun]]></title>
   <link href="http://brilliun.github.com/atom.xml" rel="self"/>
   <link href="http://brilliun.github.com/"/>
-  <updated>2012-11-16T02:30:49+08:00</updated>
+  <updated>2012-11-16T11:41:16+08:00</updated>
   <id>http://brilliun.github.com/</id>
   <author>
     <name><![CDATA[brilliun]]></name>
@@ -29,13 +29,19 @@
 
 <h3>Punctuation in identifiers</h3>
 
-<pre><code>$files        # A global variable
-@data         # An instance variable
-@@counter     # A class variable
-empty?        # A boolean-valued method or predicate
-sort!         # A mutator method that alter the object
-timeout=      # A method invoked by assignment
-</code></pre>
+<figure class='code'><div class='highlight'><table><td class='gutter'><pre class='line-numbers'><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+</pre></td><td class='code'><pre><code class='plain'><span class='line'>$files        # A global variable
+</span><span class='line'>@data         # An instance variable
+</span><span class='line'>@@counter     # A class variable
+</span><span class='line'>empty?        # A boolean-valued method or predicate
+</span><span class='line'>sort!         # A mutator method that alter the object
+</span><span class='line'>timeout=      # A method invoked by assignment</span></code></pre></td></tr></table></div></figure>
+
 
 <h2>Whitespaces</h2>
 
@@ -55,21 +61,29 @@ timeout=      # A method invoked by assignment
 <p>Be careful about the &#8220;newline terminator&#8221; when your statement doesn&#8217;t fit on a single line.
 For example:</p>
 
-<pre><code>total = x +    # Incomplete expression, parsing continues
-  y            # Adds x and y and assigns the sum to total
-</code></pre>
+<figure class='code'><div class='highlight'><table><td class='gutter'><pre class='line-numbers'><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='plain'><span class='line'>total = x +    # Incomplete expression, parsing continues
+</span><span class='line'>  y            # Adds x and y and assigns the sum to total</span></code></pre></td></tr></table></div></figure>
+
 
 <p>While in another case:</p>
 
-<pre><code>total = x    # This is a complete expression
-  + y        # A useless but complete expression
-</code></pre>
+<figure class='code'><div class='highlight'><table><td class='gutter'><pre class='line-numbers'><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='plain'><span class='line'>total = x    # This is a complete expression
+</span><span class='line'>  + y        # A useless but complete expression</span></code></pre></td></tr></table></div></figure>
+
 
 <p>Escaping a line break with a blackslash can safely prevent unexpected terminating:</p>
 
-<pre><code>total = x \
-  + y
-</code></pre>
+<figure class='code'><div class='highlight'><table><td class='gutter'><pre class='line-numbers'><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='plain'><span class='line'>total = x \
+</span><span class='line'>  + y</span></code></pre></td></tr></table></div></figure>
+
+
+
 <p><a rel="bookmark" href="http://brilliun.github.com/2012/11/14/the-ruby-programming-language-chapter-2/">&#9875; Permalink</a></p>]]></content>
     </entry>
   

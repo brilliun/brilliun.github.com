@@ -5,7 +5,7 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Brilliun's Blog</title>
+  <title>Brilliun</title>
   <meta name="author" content="brilliun">
   <meta name="Generator" content="Jekyll & Octopress (http://octopress.org)">
 
@@ -21,7 +21,7 @@
   <link rel="canonical" href="http://brilliun.github.com/">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <script src="/javascripts/octopress.min.js" type="text/javascript"></script>
-  <link href="/atom.xml" rel="alternate" title="Brilliun's Blog" type="application/atom+xml">
+  <link href="/atom.xml" rel="alternate" title="Brilliun" type="application/atom+xml">
   <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
 <link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
 <link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
@@ -34,9 +34,7 @@
 
 <body   >
   <header role="banner"><hgroup>
-  <h1><a href="/">Brilliun's Blog</a></h1>
-  
-    <h2>pushing ideas...</h2>
+  <h1><a href="/">Brilliun</a></h1>
   
 </hgroup>
 
@@ -109,13 +107,19 @@
 
 <h3>Punctuation in identifiers</h3>
 
-<pre><code>$files        # A global variable
-@data         # An instance variable
-@@counter     # A class variable
-empty?        # A boolean-valued method or predicate
-sort!         # A mutator method that alter the object
-timeout=      # A method invoked by assignment
-</code></pre>
+<figure class='code'><div class='highlight'><table><td class='gutter'><pre class='line-numbers'><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+</pre></td><td class='code'><pre><code class='plain'><span class='line'>$files        # A global variable
+</span><span class='line'>@data         # An instance variable
+</span><span class='line'>@@counter     # A class variable
+</span><span class='line'>empty?        # A boolean-valued method or predicate
+</span><span class='line'>sort!         # A mutator method that alter the object
+</span><span class='line'>timeout=      # A method invoked by assignment</span></code></pre></td></tr></table></div></figure>
+
 
 <h2>Whitespaces</h2>
 
@@ -135,21 +139,29 @@ timeout=      # A method invoked by assignment
 <p>Be careful about the &#8220;newline terminator&#8221; when your statement doesn&#8217;t fit on a single line.
 For example:</p>
 
-<pre><code>total = x +    # Incomplete expression, parsing continues
-  y            # Adds x and y and assigns the sum to total
-</code></pre>
+<figure class='code'><div class='highlight'><table><td class='gutter'><pre class='line-numbers'><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='plain'><span class='line'>total = x +    # Incomplete expression, parsing continues
+</span><span class='line'>  y            # Adds x and y and assigns the sum to total</span></code></pre></td></tr></table></div></figure>
+
 
 <p>While in another case:</p>
 
-<pre><code>total = x    # This is a complete expression
-  + y        # A useless but complete expression
-</code></pre>
+<figure class='code'><div class='highlight'><table><td class='gutter'><pre class='line-numbers'><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='plain'><span class='line'>total = x    # This is a complete expression
+</span><span class='line'>  + y        # A useless but complete expression</span></code></pre></td></tr></table></div></figure>
+
 
 <p>Escaping a line break with a blackslash can safely prevent unexpected terminating:</p>
 
-<pre><code>total = x \
-  + y
-</code></pre>
+<figure class='code'><div class='highlight'><table><td class='gutter'><pre class='line-numbers'><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='plain'><span class='line'>total = x \
+</span><span class='line'>  + y</span></code></pre></td></tr></table></div></figure>
+
+
+
 </div>
 
   <footer>
@@ -172,7 +184,28 @@ For example:</p>
 
 <aside class="sidebar">
   
-    
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/2012/11/14/the-ruby-programming-language-chapter-2/">The Ruby Programming Language - Chapter 2</a>
+      </li>
+    
+  </ul>
+</section>
+
+
+<section>
+  <h1>Latest Tweets</h1>
+  <ul id="tweets" data-user="brilliun" data-count="4" data-replies="false">
+    <li class="loading">Status updating&#8230;</li>
+  </ul>
+  
+    <a href="//twitter.com/brilliun" class="twitter-follow-button" data-show-count="false">Follow @brilliun</a>
+  
+</section>
+
 
 
 
