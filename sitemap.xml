@@ -2,14 +2,26 @@
 <urlset xmlns='http://www.sitemaps.org/schemas/sitemap/0.9'>
     <url>
         <loc>http://brilliun.github.com/2012/11/14/the-ruby-programming-language-chapter-2/</loc>
-        <lastmod>2012-11-16T23:43:02+08:00</lastmod>
+        <lastmod>2012-11-26T21:50:54+08:00</lastmod>
+    </url>
+    <url>
+        <loc>http://brilliun.github.com/2012/11/21/ma-lai-xi-ya-gu-jin/</loc>
+        <lastmod>2012-11-26T23:35:32+08:00</lastmod>
+    </url>
+    <url>
+        <loc>http://brilliun.github.com/2012/11/21/ba-yong-hu-dang-cheng-sha-gua/</loc>
+        <lastmod>2012-11-26T23:11:30+08:00</lastmod>
+    </url>
+    <url>
+        <loc>http://brilliun.github.com/2012/11/26/the-ruby-programming-language-chapter-3/</loc>
+        <lastmod>2012-11-26T23:37:50+08:00</lastmod>
     </url>
     <url>
         <loc>http://brilliun.github.com/archives/</loc>
-        <lastmod>2012-11-16T23:43:02+08:00</lastmod>
+        <lastmod>2012-11-26T23:37:50+08:00</lastmod>
     </url>
     <url>
         <loc>http://brilliun.github.com/</loc>
-        <lastmod>2012-11-16T23:43:02+08:00</lastmod>
+        <lastmod>2012-11-26T23:37:50+08:00</lastmod>
     </url>
 </urlset>

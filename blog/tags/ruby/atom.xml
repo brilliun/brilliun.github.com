@@ -4,7 +4,7 @@
   <title><![CDATA[Tag: Ruby | Brilliun]]></title>
   <link href="http://brilliun.github.com/blog/tags/ruby/atom.xml" rel="self"/>
   <link href="http://brilliun.github.com/"/>
-  <updated>2012-11-17T00:40:38+08:00</updated>
+  <updated>2012-11-26T23:38:04+08:00</updated>
   <id>http://brilliun.github.com/</id>
   <author>
     <name><![CDATA[brilliun]]></name>
@@ -14,11 +14,63 @@
 
   
   <entry>
+    <title type="html"><![CDATA[The Ruby Programming Language- Chapter 3]]></title>
+    <link href="http://brilliun.github.com/2012/11/26/the-ruby-programming-language-chapter-3/"/>
+    <updated>2012-11-26T21:34:00+08:00</updated>
+    <id>http://brilliun.github.com/2012/11/26/the-ruby-programming-language-chapter-3</id>
+    <content type="html"><![CDATA[<h1>Datatypes and Objects</h1>
+
+<p>All Ruby values are objects.</p>
+
+<p>The <code>Integer</code> class has two sub-classes: <code>Fixnum</code>(within 31 bits) and <code>Bignum</code>(arbitrary size).<br/>
+Operations on <code>Fixnum</code> or <code>Bignum</code> can have transparent conversion of results between the two classes.</p>
+
+<p><code>BigDecimal</code>(provided by Ruby standard library) represents real numbers with arbitrary precision, using a decimal representation rather than a binary representation.</p>
+
+<h3>Number literal</h3>
+
+<p>Underscores may be inserted into literals, sometimes used as a thousands separator:</p>
+
+<p><code>ruby
+1_000_000_000    # One billion
+</code></p>
+
+<p>Representations other than base 10:</p>
+
+<p><code>ruby
+0377        # Octal
+Ob1111_1111 # Binary
+0xFF        # Hexadecimal
+</code></p>
+
+<p>For floating-point literals, digits must appear before AND after the decimal point.<br/>
+You CANNOT simply write <code>.1</code>; you must write <code>0.1</code> explicitly.</p>
+
+<h3>Arithmetic in Ruby</h3>
+
+<p>Since Ruby automatically converts between <code>Fixnum</code> and <code>Bignum</code>, integer arithmetic in Ruby never overflows.<br/>
+Floating-point numbers overflow normally just like many other languages.</p>
+
+<p>Ruby use <code>**</code> operator for exponentiation. Exponents need NOT be integers.<br/>
+When multiple exponentiations are combined into a single expression, they are evaluated from right to left. Thus, <code>4**3**2</code> is the same as <code>4**9</code>, not <code>64**2</code>.</p>
+
+<p>Integers can be operated by bit-manipulation operators: <code>~, &amp;, |, ^, &lt;&lt;, &gt;&gt;</code>.</p>
+
+<p>Integers can be treated as arrays to query(but not set) individual bits:
+<code>ruby
+even = (x[0] == 0)    # A number is even if the least-significant bit is 0
+</code></p>
+]]></content>
+  </entry>
+  
+  <entry>
     <title type="html"><![CDATA[The Ruby Programming Language - Chapter 2]]></title>
     <link href="http://brilliun.github.com/2012/11/14/the-ruby-programming-language-chapter-2/"/>
     <updated>2012-11-14T20:39:00+08:00</updated>
     <id>http://brilliun.github.com/2012/11/14/the-ruby-programming-language-chapter-2</id>
-    <content type="html"><![CDATA[<h2>Identifiers</h2>
+    <content type="html"><![CDATA[<h1>The Structure and Execution of Ruby Programs</h1>
+
+<h2>Identifiers</h2>
 
 <p>Identifiers that begin with a captial letter A-Z are constants, and the Ruby interpreter will issue a warning (but not an error) if you alter the value of such an identifier.</p>
 

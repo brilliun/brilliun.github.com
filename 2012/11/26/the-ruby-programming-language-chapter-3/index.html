@@ -5,7 +5,7 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>The Ruby Programming Language - Chapter 2 - Brilliun</title>
+  <title>The Ruby Programming Language- Chapter 3 - Brilliun</title>
   <meta name="author" content="brilliun">
   <meta name="Generator" content="Jekyll & Octopress (http://octopress.org)">
 
@@ -18,7 +18,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://brilliun.github.com/2012/11/14/the-ruby-programming-language-chapter-2/">
+  <link rel="canonical" href="http://brilliun.github.com/2012/11/26/the-ruby-programming-language-chapter-3/">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <script src="/javascripts/octopress.min.js" type="text/javascript"></script>
   <link href="/atom.xml" rel="alternate" title="Brilliun" type="application/atom+xml">
@@ -76,7 +76,7 @@
   <header>
     <h1 class="entry-title">
 
-The Ruby Programming Language - Chapter 2
+The Ruby Programming Language- Chapter 3
 
 </h1>
 
@@ -94,73 +94,59 @@ The Ruby Programming Language - Chapter 2
   
 
 
-<time datetime="2012-11-14T20:39:00+08:00" pubdate data-updated="true">Nov 14<span>th</span>, 2012</time>
-         &bull; <a rel="bookmark" href="/2012/11/14/the-ruby-programming-language-chapter-2/">Permalink</a>
+<time datetime="2012-11-26T21:34:00+08:00" pubdate data-updated="true">Nov 26<span>th</span>, 2012</time>
+         &bull; <a rel="bookmark" href="/2012/11/26/the-ruby-programming-language-chapter-3/">Permalink</a>
       </p>
     
   </header>
 
-<div class="entry-content"><h1>The Structure and Execution of Ruby Programs</h1>
+<div class="entry-content"><h1>Datatypes and Objects</h1>
 
-<h2>Identifiers</h2>
+<p>All Ruby values are objects.</p>
 
-<p>Identifiers that begin with a captial letter A-Z are constants, and the Ruby interpreter will issue a warning (but not an error) if you alter the value of such an identifier.</p>
+<p>The <code>Integer</code> class has two sub-classes: <code>Fixnum</code>(within 31 bits) and <code>Bignum</code>(arbitrary size).<br/>
+Operations on <code>Fixnum</code> or <code>Bignum</code> can have transparent conversion of results between the two classes.</p>
 
-<h3>Punctuation in identifiers</h3>
+<p><code>BigDecimal</code>(provided by Ruby standard library) represents real numbers with arbitrary precision, using a decimal representation rather than a binary representation.</p>
+
+<h3>Number literal</h3>
+
+<p>Underscores may be inserted into literals, sometimes used as a thousands separator:</p>
+
+<figure class='code'><div class='highlight'><table><td class='gutter'><pre class='line-numbers'><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="mi">1_000_000_000</span>    <span class="c1"># One billion</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Representations other than base 10:</p>
 
 <figure class='code'><div class='highlight'><table><td class='gutter'><pre class='line-numbers'><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="vg">$files</span>        <span class="c1"># A global variable</span>
-</span><span class='line'><span class="vi">@data</span>         <span class="c1"># An instance variable</span>
-</span><span class='line'><span class="vc">@@counter</span>     <span class="c1"># A class variable</span>
-</span><span class='line'><span class="n">empty?</span>        <span class="c1"># A boolean-valued method or predicate</span>
-</span><span class='line'><span class="n">sort!</span>         <span class="c1"># A mutator method that alter the object</span>
-</span><span class='line'><span class="n">timeout</span><span class="o">=</span>      <span class="c1"># A method invoked by assignment</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="mo">0377</span>        <span class="c1"># Octal</span>
+</span><span class='line'><span class="no">Ob1111_1111</span> <span class="c1"># Binary</span>
+</span><span class='line'><span class="mh">0xFF</span>        <span class="c1"># Hexadecimal</span>
 </span></code></pre></td></tr></table></div></figure>
 
 
-<h2>Whitespaces</h2>
+<p>For floating-point literals, digits must appear before AND after the decimal point.<br/>
+You CANNOT simply write <code>.1</code>; you must write <code>0.1</code> explicitly.</p>
 
-<h3>Newlines as statement terminators</h3>
+<h3>Arithmetic in Ruby</h3>
 
-<p>Semicolons are not required to terminate statements. It can be omitted.</p>
+<p>Since Ruby automatically converts between <code>Fixnum</code> and <code>Bignum</code>, integer arithmetic in Ruby never overflows.<br/>
+Floating-point numbers overflow normally just like many other languages.</p>
 
-<p>Without explicit semicolons, Ruby interpreter figure out on its own where statements end:</p>
+<p>Ruby use <code>**</code> operator for exponentiation. Exponents need NOT be integers.<br/>
+When multiple exponentiations are combined into a single expression, they are evaluated from right to left. Thus, <code>4**3**2</code> is the same as <code>4**9</code>, not <code>64**2</code>.</p>
 
-<ol>
-<li>For a syntactically complete statement, Ruby uses the newline as the terminator;</li>
-<li>If the statement is not complete, Ruby continues parsing the statement on the next line.</li>
-<li>(For Ruby 1.9) If the first character on a line is a period(.), then the line is considered a continuation line.</li>
-</ol>
+<p>Integers can be operated by bit-manipulation operators: <code>~, &amp;, |, ^, &lt;&lt;, &gt;&gt;</code>.</p>
 
-
-<p>Be careful about the &#8220;newline terminator&#8221; when your statement doesn&#8217;t fit on a single line.
-For example:</p>
+<p>Integers can be treated as arrays to query(but not set) individual bits:</p>
 
 <figure class='code'><div class='highlight'><table><td class='gutter'><pre class='line-numbers'><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class='plain'><span class='line'>total = x +    # Incomplete expression, parsing continues
-</span><span class='line'>  y            # Adds x and y and assigns the sum to total</span></code></pre></td></tr></table></div></figure>
-
-
-<p>While in another case:</p>
-
-<figure class='code'><div class='highlight'><table><td class='gutter'><pre class='line-numbers'><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class='plain'><span class='line'>total = x    # This is a complete expression
-</span><span class='line'>  + y        # A useless but complete expression</span></code></pre></td></tr></table></div></figure>
-
-
-<p>Escaping a line break with a blackslash can safely prevent unexpected terminating:</p>
-
-<figure class='code'><div class='highlight'><table><td class='gutter'><pre class='line-numbers'><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class='plain'><span class='line'>total = x \
-</span><span class='line'>  + y</span></code></pre></td></tr></table></div></figure>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="n">even</span> <span class="o">=</span> <span class="p">(</span><span class="n">x</span><span class="o">[</span><span class="mi">0</span><span class="o">]</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span>    <span class="c1"># A number is even if the least-significant bit is 0</span>
+</span></code></pre></td></tr></table></div></figure>
 
 
 
@@ -186,7 +172,7 @@ For example:</p>
   
 
 
-<time datetime="2012-11-14T20:39:00+08:00" pubdate data-updated="true">Nov 14<span>th</span>, 2012</time>
+<time datetime="2012-11-26T21:34:00+08:00" pubdate data-updated="true">Nov 26<span>th</span>, 2012</time>
 
 
 <span class="categories">Posted in
@@ -225,8 +211,8 @@ For example:</p>
     
     <p class="meta">
       
+        <a class="basic-alignment left" href="/2012/11/21/ba-yong-hu-dang-cheng-sha-gua/" title="Previous Post: 把用户当成傻瓜">&laquo; 把用户当成傻瓜</a>
       
-        <a class="basic-alignment right" href="/2012/11/21/ma-lai-xi-ya-gu-jin/" title="Next Post: 马来西亚-古晋">马来西亚-古晋 &raquo;</a>
       
     </p>
   </footer>
@@ -318,8 +304,8 @@ For example:</p>
       
         
         // var disqus_developer = 1;
-        var disqus_identifier = 'http://brilliun.github.com/2012/11/14/the-ruby-programming-language-chapter-2/';
-        var disqus_url = 'http://brilliun.github.com/2012/11/14/the-ruby-programming-language-chapter-2/';
+        var disqus_identifier = 'http://brilliun.github.com/2012/11/26/the-ruby-programming-language-chapter-3/';
+        var disqus_url = 'http://brilliun.github.com/2012/11/26/the-ruby-programming-language-chapter-3/';
         var disqus_script = 'embed.js';
       
     (function () {

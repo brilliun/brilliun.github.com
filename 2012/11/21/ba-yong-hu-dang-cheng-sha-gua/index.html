@@ -5,7 +5,7 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>The Ruby Programming Language - Chapter 2 - Brilliun</title>
+  <title>把用户当成傻瓜 - Brilliun</title>
   <meta name="author" content="brilliun">
   <meta name="Generator" content="Jekyll & Octopress (http://octopress.org)">
 
@@ -18,7 +18,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://brilliun.github.com/2012/11/14/the-ruby-programming-language-chapter-2/">
+  <link rel="canonical" href="http://brilliun.github.com/2012/11/21/ba-yong-hu-dang-cheng-sha-gua/">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <script src="/javascripts/octopress.min.js" type="text/javascript"></script>
   <link href="/atom.xml" rel="alternate" title="Brilliun" type="application/atom+xml">
@@ -76,7 +76,7 @@
   <header>
     <h1 class="entry-title">
 
-The Ruby Programming Language - Chapter 2
+把用户当成傻瓜
 
 </h1>
 
@@ -94,76 +94,21 @@ The Ruby Programming Language - Chapter 2
   
 
 
-<time datetime="2012-11-14T20:39:00+08:00" pubdate data-updated="true">Nov 14<span>th</span>, 2012</time>
-         &bull; <a rel="bookmark" href="/2012/11/14/the-ruby-programming-language-chapter-2/">Permalink</a>
+<time datetime="2012-11-21T22:37:00+08:00" pubdate data-updated="true">Nov 21<span>st</span>, 2012</time>
+         &bull; <a rel="bookmark" href="/2012/11/21/ba-yong-hu-dang-cheng-sha-gua/">Permalink</a>
       </p>
     
   </header>
 
-<div class="entry-content"><h1>The Structure and Execution of Ruby Programs</h1>
+<div class="entry-content"><p>用户只需要能够满足他们需求的产品，而不需要成为那一领域的专家，不需要涉及其中专业问题的能力和知识。好的产品应该永远把用户当成傻瓜。</p>
 
-<h2>Identifiers</h2>
+<p>比如传统的PC机对于普通用户来说就是功能过剩且太过难用，而tablet的流行就让厂商和用户重新领悟了普通人究竟应该怎样使用电脑。最近刚给爸妈买了ipad，用了两天他们就已经爱不释手，到现在一周过去了他们都再也没有开过本来的那台电脑，因为那上面承载了太多不堪回首的痛苦记忆，过去几年他们对每一个小小的意外和随之而来的专业词汇都胆战心惊，而仅仅是将手持设备中拍摄的照片通过邮件发送出去这件事情我也不知教过多少遍，但光是要把拍的照片存在哪里就够他们费劲理解一番的了，而仔细想来，我父母根本不需要知道计算机的文件系统是怎样的架构和不同的存储位置会带来怎样的区别，他们只需要知道，拍摄的照片是自动放在名叫相册的地方的就足矣。</p>
 
-<p>Identifiers that begin with a captial letter A-Z are constants, and the Ruby interpreter will issue a warning (but not an error) if you alter the value of such an identifier.</p>
+<p>除此以外，这种解放用户的理念在很多行业中都已经开始实现，比如原本学车默认的手动档模式现在可以改为自动档，因为学车的人大部分不需要知道在汽车中有档位这个概念，也不在乎所谓手动档的驾驶乐趣和操控感，他们要的只是踩了油门就往前开，踩了刹车就减速的汽车，至于什么坡道起步技术的重要性就更加是让很多自排驾驶员无法理解。</p>
 
-<h3>Punctuation in identifiers</h3>
+<p>当然，这些新的产品往往比它们的前身价格更贵以至于起初愿意尝试的用户并不占多数，但它们更贵正是因为它们是更好的产品，能带给用户更满意的体验。而一旦它们的好处得到广泛认知，伴随着物质水平的提高和能够提供新产品的公司增加导致的竞争加剧，新产品逐渐占据主流几乎是大势所趋。</p>
 
-<figure class='code'><div class='highlight'><table><td class='gutter'><pre class='line-numbers'><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="vg">$files</span>        <span class="c1"># A global variable</span>
-</span><span class='line'><span class="vi">@data</span>         <span class="c1"># An instance variable</span>
-</span><span class='line'><span class="vc">@@counter</span>     <span class="c1"># A class variable</span>
-</span><span class='line'><span class="n">empty?</span>        <span class="c1"># A boolean-valued method or predicate</span>
-</span><span class='line'><span class="n">sort!</span>         <span class="c1"># A mutator method that alter the object</span>
-</span><span class='line'><span class="n">timeout</span><span class="o">=</span>      <span class="c1"># A method invoked by assignment</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<h2>Whitespaces</h2>
-
-<h3>Newlines as statement terminators</h3>
-
-<p>Semicolons are not required to terminate statements. It can be omitted.</p>
-
-<p>Without explicit semicolons, Ruby interpreter figure out on its own where statements end:</p>
-
-<ol>
-<li>For a syntactically complete statement, Ruby uses the newline as the terminator;</li>
-<li>If the statement is not complete, Ruby continues parsing the statement on the next line.</li>
-<li>(For Ruby 1.9) If the first character on a line is a period(.), then the line is considered a continuation line.</li>
-</ol>
-
-
-<p>Be careful about the &#8220;newline terminator&#8221; when your statement doesn&#8217;t fit on a single line.
-For example:</p>
-
-<figure class='code'><div class='highlight'><table><td class='gutter'><pre class='line-numbers'><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class='plain'><span class='line'>total = x +    # Incomplete expression, parsing continues
-</span><span class='line'>  y            # Adds x and y and assigns the sum to total</span></code></pre></td></tr></table></div></figure>
-
-
-<p>While in another case:</p>
-
-<figure class='code'><div class='highlight'><table><td class='gutter'><pre class='line-numbers'><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class='plain'><span class='line'>total = x    # This is a complete expression
-</span><span class='line'>  + y        # A useless but complete expression</span></code></pre></td></tr></table></div></figure>
-
-
-<p>Escaping a line break with a blackslash can safely prevent unexpected terminating:</p>
-
-<figure class='code'><div class='highlight'><table><td class='gutter'><pre class='line-numbers'><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class='plain'><span class='line'>total = x \
-</span><span class='line'>  + y</span></code></pre></td></tr></table></div></figure>
-
-
-
+<p>今天，还有很多行业的用户没有被解放。例如，大部分中国的家庭一旦经历过一次装修，都会成为建材与家具领域的半个专家。但是这本身是很悲哀的一件事。由于目前还很少有公司在相对合理的价格区间内提供一体式的并且不暗藏猫腻的装潢服务，倒逼着用户自学不同木材的地板有何优劣，板材家具分为多少种类且各自的有害物质排放如何，淋浴水管究竟应该选用电镀铜还是不锈钢。。历经数月，每天下班后对着网上各种言之凿凿的科普研究，每个周末建材市场中的尔虞我诈，每个人都积累了一肚子的苦水和不知多少年后才会再被用到的宝贵经验。希望国内家装行业的变革早些到来。</p>
 </div>
 
 
@@ -186,12 +131,12 @@ For example:</p>
   
 
 
-<time datetime="2012-11-14T20:39:00+08:00" pubdate data-updated="true">Nov 14<span>th</span>, 2012</time>
+<time datetime="2012-11-21T22:37:00+08:00" pubdate data-updated="true">Nov 21<span>st</span>, 2012</time>
 
 
 <span class="categories">Posted in
   
-    <a class='category' href='/blog/categories/reading/'>Reading</a>
+    <a class='category' href='/blog/categories/ithought/'>IThought</a>
   
 </span>
 
@@ -200,7 +145,7 @@ For example:</p>
 
 <span class="tags">Tagged with
   
-    <a class='tag' href='/blog/tags/ruby/'>Ruby</a>
+    <a class='tag' href='/blog/tags/product-app/'>Product/App</a>, <a class='tag' href='/blog/tags/ux/'>UX</a>
   
 </span>
 
@@ -225,8 +170,10 @@ For example:</p>
     
     <p class="meta">
       
+        <a class="basic-alignment left" href="/2012/11/21/ma-lai-xi-ya-gu-jin/" title="Previous Post: 马来西亚-古晋">&laquo; 马来西亚-古晋</a>
       
-        <a class="basic-alignment right" href="/2012/11/21/ma-lai-xi-ya-gu-jin/" title="Next Post: 马来西亚-古晋">马来西亚-古晋 &raquo;</a>
+      
+        <a class="basic-alignment right" href="/2012/11/26/the-ruby-programming-language-chapter-3/" title="Next Post: The Ruby Programming Language- Chapter 3">The Ruby Programming Language- Chapter 3 &raquo;</a>
       
     </p>
   </footer>
@@ -318,8 +265,8 @@ For example:</p>
       
         
         // var disqus_developer = 1;
-        var disqus_identifier = 'http://brilliun.github.com/2012/11/14/the-ruby-programming-language-chapter-2/';
-        var disqus_url = 'http://brilliun.github.com/2012/11/14/the-ruby-programming-language-chapter-2/';
+        var disqus_identifier = 'http://brilliun.github.com/2012/11/21/ba-yong-hu-dang-cheng-sha-gua/';
+        var disqus_url = 'http://brilliun.github.com/2012/11/21/ba-yong-hu-dang-cheng-sha-gua/';
         var disqus_script = 'embed.js';
       
     (function () {
