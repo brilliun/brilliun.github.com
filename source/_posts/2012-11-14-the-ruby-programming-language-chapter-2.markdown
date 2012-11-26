@@ -4,9 +4,10 @@ title: "The Ruby Programming Language - Chapter 2"
 date: 2012-11-14 20:39
 comments: true
 categories: [Reading]
-tags: [Ruby]
+tags: Ruby
 ---
 
+# The Structure and Execution of Ruby Programs
 
 ## Identifiers
 
