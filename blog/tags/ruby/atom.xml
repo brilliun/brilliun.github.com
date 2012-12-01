@@ -4,7 +4,7 @@
   <title><![CDATA[Tag: Ruby | Brilliun]]></title>
   <link href="http://brilliun.github.com/blog/tags/ruby/atom.xml" rel="self"/>
   <link href="http://brilliun.github.com/"/>
-  <updated>2012-11-30T23:54:32+08:00</updated>
+  <updated>2012-12-02T00:27:16+08:00</updated>
   <id>http://brilliun.github.com/</id>
   <author>
     <name><![CDATA[brilliun]]></name>
@@ -133,7 +133,7 @@ listing = `#{listcmd}`
 </ul>
 
 
-<h2>String Operators</h2>
+<h3>String Operators</h3>
 
 <ul>
 <li><p>The <code>+</code> operator concatenates two strings and returns the result as a new <code>String</code> object. However, not like in Java, the <code>+</code> operator doesn't  automatically convert its operand to a string:
@@ -149,7 +149,7 @@ In such cases, string interpolation is simpler:
 </ul>
 
 
-<h2>Accessing Characters and Substrings</h2>
+<h3>Accessing Characters and Substrings</h3>
 
 <ul>
 <li><p>Access and alter the string literal using square-bracket array-index operator <code>[]</code>.</p></li>
@@ -191,7 +191,7 @@ s["l"] = "L"    # "heLlo"
 </ul>
 
 
-<h2>Iterating Strings</h2>
+<h3>Iterating Strings</h3>
 
 <ul>
 <li>From Ruby 1.9, there are three clearly named string iterators: <code>each_byte</code>, <code>each_char</code>, and <code>each_line</code>. For example:</li>
@@ -202,6 +202,167 @@ s["l"] = "L"    # "heLlo"
 s = "hello"
 s.each_char {|x| print "#{x} "}    # Prints "h e l l o".
 </code></p>
+
+<h2>Arrays</h2>
+
+<ul>
+<li><p>Arrays in Ruby are untyped and mutable; elements of an array need <strong>NOT</strong> all be of the same class.</p></li>
+<li><p>Arrays are dynamically resizeable; assigning a value to an element beyond the end of the array will extend it with <code>nil</code> elements. (However, before the beginning is an error)
+<code>ruby
+a = [0, 1, "four", 9]
+a[7]                   # nil
+a[-7]                  # nil
+a[7] = 49              # [0, 1, "four", 9, nil, nil, nil, 49]
+a[-9] = 81             # Error
+</code></p></li>
+<li><p>Negative array-index specifies a 1-based position from the end of the array.</p></li>
+<li><p>When indexing the array out of range, Ruby simply returns <code>nil</code> and does not throw an exception.</p></li>
+<li><p>Special-case syntax <code>%w</code> and <code>%W</code> for expressing array literals whose elements are short strings without spaces:
+<code>ruby
+words = %w(this is a test)   # Same as: ['this', 'is', 'a', 'test']
+</code></p></li>
+<li><p>The <code>Array.new</code> constructor supports programmatical initialization; one useful case is:
+<code>ruby
+count = Array.new(3) {|i| i+1}  # [1, 2, 3]
+</code></p></li>
+<li><p>Single index supports accessing and assigning single elements; Two-integer index and <code>Range</code> index support accessing, assigning, inserting, and deleting sub-arrays.
+<code>ruby
+a = [1, 2, 3, 4, 5]
+</code>
+Accessing
+<code>ruby
+a[0]                 # 1
+a[0,1]               # [1]
+</code>
+Assigning
+<code>ruby
+a[4] = 25            # [1, 2, 3, 4, 25]
+a[1..3] = [4, 9, 16] # [1, 4, 9, 16, 25]
+</code>
+Inserting
+``` ruby
+a[1, 0] = [2, 3]     # [1, 2, 3, 4, 9, 16, 25]</p>
+
+<pre><code>               # Note that a[1] = [2, 3] results in [1, [2, 3], 9, 16, 25]
+</code></pre>
+
+<code>
+Deleting
+</code> ruby
+a[2..4] = []         # [1, 2, 16, 25]
+
+<pre><code>               # Note that a[2] = [] results in [1, 2, [], 4, 9, 16, 25]
+</code></pre>
+
+<p><code>
+Mix (un-matched sub-array size)
+</code> ruby
+a[1,2] = [3, 5, 7]   # [1, 3, 5, 7, 25]
+a[1..3] = [4, 16]    # [1, 4, 16, 25]
+```</p></li>
+<li><p>The <code>+</code> operator concatenate two arrays, returning a new array:
+<code>ruby
+a = [1, 2, 3] + [4, 5]   # [1, 2, 3, 4, 5]
+a = a + [[6, 7, 8]]  # [1, 2, 3, 4, 5, [6, 7, 8]]
+a = a + 9                # Error: righthand side must be an array
+</code></p></li>
+<li><p>The <code>-</code> operator first makes a copy of its lefthand array, and then removes any elements from that copy if they appear <strong>anywhere</strong> in the righthand array:
+<code>ruby
+[1, 2, 3, 2, 1] - [2, 3, 4]   # [1, 1]
+</code></p></li>
+<li><p>The <code>&lt;&lt;</code> operator append elements to the end of existing array:
+<code>ruby
+a = []         # empty array
+a &lt;&lt; 1         # [1]
+a &lt;&lt; 2 &lt;&lt; 3    # [1, 2, 3]
+a &lt;&lt; [4, 5, 6] # [1, 2, 3, [4, 5, 6]]
+</code></p></li>
+<li><p>The <code>*</code> operator supports repetition:
+<code>ruby
+a = [0] * 5    # [0, 0, 0, 0, 0]
+</code></p></li>
+<li><p>The <code>Array</code> class support union and intersection like in sets; the returned array does not contain <strong>any</strong> duplicate elements(just like sets).
+<code>ruby
+a = [1, 1, 2, 2, 3, 3, 4]
+b = [5, 5, 4, 4, 3, 3, 2]
+a | b   # [1, 2, 3, 4, 5]
+b | a   # [5, 4, 3, 2, 1]
+a &amp; b   # [2, 3, 4]
+b &amp; a   # [4, 3, 2]
+</code>
+When using these two operators, the arrays should be regarded as un-ordered sets, because the algorithm by which union and intersection are performed is <strong>not specified</strong>, and there are <strong>no guarantees</strong> about the order of the elements in the returned array.</p></li>
+<li><p>Use the <code>each</code> method to iterate array elements:
+<code>ruby
+a.each {|x| print x}  # Print the elements of a
+</code></p></li>
+</ul>
+
+
+<h2>Hashes</h2>
+
+<h3>Initialization</h3>
+
+<ul>
+<li><p>Use <code>Hash.new</code> method
+<code>ruby
+numbers = Hash.new
+numbers["one"] = 1
+numbers["two"] = 2
+...
+sum = numbers["one"] + numbers["two"]  # Retrieve values like this
+</code></p></li>
+<li><p>Use a two-character arrow <code>=&gt;</code>
+<code>ruby
+numbers = {"one" =&gt; 1, "two" =&gt; 2}
+</code></p></li>
+<li><p>Use <code>Symbol</code> objects rather than strings
+<code>ruby
+numbers = {:one =&gt; 1, :two =&gt; 2}
+</code></p></li>
+<li><p>Ruby 1.9 supported syntax when keys are symbols
+<code>ruby
+numbers = {one: 1, two: 2}
+</code></p></li>
+</ul>
+
+
+<h3>Equality and Mutable Keys</h3>
+
+<ul>
+<li><p>The <code>Hash</code> class compares keys for equality with the <code>eql?</code> method. If two objects are <code>eql?</code>, their <code>hash</code> methods must also return the same value.</p></li>
+<li><p>If you define a new class that overrides the <code>eql?</code> method, you must also override the <code>hash</code> method.</p></li>
+<li><p>If you define a class and do not override <code>eql?</code>, then two distinct instances of your class are distinct hash keys even if they represent the same content.</p></li>
+<li><p>Mutable objects are problematic as hash keys. The only special case is the string objects. Ruby makes private copies of all strings used as keys.</p></li>
+<li><p>If you must use mutable objects as hash keys, make private copies or call the <code>freeze</code> method; otherwise, call the <code>rehash</code> method of the <code>Hash</code> every time you mutate a key.</p></li>
+</ul>
+
+
+<h2>Objects</h2>
+
+<h3>Object Equality</h3>
+
+<ul>
+<li><p>The <code>equal?</code> method: test whether two values refer to exactly the same object (same <code>object_id</code>).</p></li>
+<li><p>The <code>==</code> operator: most common way to test logical equality. Most classes redefine this operator for specific comparing or testing. (When Ruby sees <code>!=</code>, it simply uses the <code>==</code> operator and then inverts the result)</p></li>
+<li><p>The <code>eql?</code> method: typically used by <code>Hash</code> classes;  also usually used as a strict version of <code>==</code> that does no type conversion.
+<code>ruby
+1 == 1.0    # true
+1.eql?(1.0) # false
+</code></p></li>
+</ul>
+
+
+<h3>Copying Objects</h3>
+
+<p>If the copied object includes one internal state that refers to other objects, only the object references are copied, not the referenced objects themselves.</p>
+
+<ul>
+<li><p>An object may be <em>frozen</em> by calling its <code>freeze</code> method: none of its internal state may be changed, and an attempt to call any of its mutator methods fails. You can check that by <code>frozon?</code> method.</p></li>
+<li><p>The <code>clone</code> method copies both the frozen and tainted <em>label</em>; the <code>dup</code> method only copies the tainted label.</p></li>
+<li><p><code>clone</code> copies any singleton methods of the object, whereas <code>dup</code> does not.</p></li>
+<li><p>You can save the state of an object by passing it to the class method <code>Marshal.dump</code>, and later restore it by <code>Marshal.load</code></p></li>
+</ul>
+
 ]]></content>
   </entry>
   
