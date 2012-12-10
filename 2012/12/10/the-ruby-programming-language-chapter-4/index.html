@@ -5,7 +5,7 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Tag: Ruby - Brilliun</title>
+  <title>The Ruby Programming Language Chapter 4 - Brilliun</title>
   <meta name="author" content="brilliun">
   <meta name="Generator" content="Jekyll & Octopress (http://octopress.org)">
 
@@ -18,7 +18,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://brilliun.github.comblog/tags/ruby/">
+  <link rel="canonical" href="http://brilliun.github.com/2012/12/10/the-ruby-programming-language-chapter-4/">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <script src="/javascripts/octopress.min.js" type="text/javascript"></script>
   <link href="/atom.xml" rel="alternate" title="Brilliun" type="application/atom+xml">
@@ -32,7 +32,7 @@
   <link href="/octopress-favicon.png" rel="icon">
 </head>
 
-<body  id="archive"   >
+<body   >
   <header role="banner"><hgroup>
   <h1><a href="/">Brilliun</a></h1>
   
@@ -60,129 +60,178 @@
   <div id="main">
     <div id="content">
       <div>
-<article role="article">
+
+
+
+
+
+
+
+
+
+
+
+<article class="hentry " role="article">
   
   <header>
-    <h1 class="entry-title">Tag: Ruby</h1>
+    <h1 class="entry-title">
+
+The Ruby Programming Language Chapter 4
+
+</h1>
+
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-12-10T15:59:00+08:00" pubdate data-updated="true">Dec 10<span>th</span>, 2012</time>
+         &bull; <a rel="bookmark" href="/2012/12/10/the-ruby-programming-language-chapter-4/">Permalink</a>
+      </p>
     
   </header>
-  
-  <div id="blog-archives" class="tag">
+
+<div class="entry-content"><h3>Keyword Literals</h3>
+
+<ul>
+<li><p><code>__FILE__</code>: string that names the file that the Ruby interpreter is executing.</p></li>
+<li><p><code>__LINE__</code>: integer that specifies the line number within <code>__FILE__</code> of the current line of code.</p></li>
+<li><p><code>__ENCODING__</code>: encoding of the current file. (Ruby 1.9)</p></li>
+</ul>
 
 
+<h3>Uninitialized Variables</h3>
 
-  
-  <h2>2012</h2>
-
-
-
-
-
-
-
+<ul>
+<li><p>Class variables: Error</p></li>
+<li><p>Instance variables: Returns <code>nil</code></p></li>
+<li><p>Global variables: Returns <code>nil</code></p></li>
+<li><p>Local variables: Error, usually.</p></li>
+</ul>
 
 
+<h3>Constants</h3>
+
+<ul>
+<li>Like global variables, constants can be used anywhere in a Ruby program without regard to scope.</li>
+</ul>
 
 
-
-<article>
-  
-<h1 class="entry-title">
-
-<a href="/2012/12/10/the-ruby-programming-language-chapter-4/">The Ruby Programming Language Chapter 4</a>
-
-</h1>
-
-<time datetime="2012-12-10T15:59:00+08:00" pubdate><span class='month'>Dec</span> <span class='day'>10</span> <span class='year'>2012</span></time>
-<footer>
-  
-  
-  
-  <span class="categories">posted in <a class='category' href='/blog/categories/reading/'>Reading</a></span>
-  
-  
-    <span class="tags">tagged with <a class='tag' href='/blog/tags/ruby/'>Ruby</a></span>
-  
-</footer>
-
-</article>
+<figure class='code'><div class='highlight'><table><td class='gutter'><pre class='line-numbers'><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="no">CM_PER_INCH</span> <span class="o">=</span> <span class="mi">2</span><span class="o">.</span><span class="mi">54</span>  <span class="c1"># Define a global constant.</span>
+</span><span class='line'><span class="no">CM_PER_INCH</span>         <span class="c1"># Refer to the constant.</span>
+</span><span class='line'><span class="o">::</span><span class="no">CM_PER_INCH</span>       <span class="c1"># A better way to refer to a global constant.</span>
+</span></code></pre></td></tr></table></div></figure>
 
 
+<ul>
+<li>UNLIKE global variables, constants can be defined by classes and modules and therefore have qualified names, e.g. <code>Math::PI</code></li>
+</ul>
 
 
+<h3>Method Invocations</h3>
+
+<ul>
+<li><p>The value of a method invocation expression is the value of the last evaluated expression in the body of the method.</p></li>
+<li><p>Ruby objects encapsulate instance variables but expose only methods to the outside world.</p></li>
+</ul>
 
 
+<h3>Assignments</h3>
 
-
-
-
-
-
-
-
-<article>
-  
-<h1 class="entry-title">
-
-<a href="/2012/11/26/the-ruby-programming-language-chapter-3/">The Ruby Programming Language- Chapter 3</a>
-
-</h1>
-
-<time datetime="2012-11-26T21:34:00+08:00" pubdate><span class='month'>Nov</span> <span class='day'>26</span> <span class='year'>2012</span></time>
-<footer>
-  
-  
-  
-  <span class="categories">posted in <a class='category' href='/blog/categories/reading/'>Reading</a></span>
-  
-  
-    <span class="tags">tagged with <a class='tag' href='/blog/tags/ruby/'>Ruby</a></span>
-  
-</footer>
-
-</article>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<article>
-  
-<h1 class="entry-title">
-
-<a href="/2012/11/14/the-ruby-programming-language-chapter-2/">The Ruby Programming Language - Chapter 2</a>
-
-</h1>
-
-<time datetime="2012-11-14T20:39:00+08:00" pubdate><span class='month'>Nov</span> <span class='day'>14</span> <span class='year'>2012</span></time>
-<footer>
-  
-  
-  
-  <span class="categories">posted in <a class='category' href='/blog/categories/reading/'>Reading</a></span>
-  
-  
-    <span class="tags">tagged with <a class='tag' href='/blog/tags/ruby/'>Ruby</a></span>
-  
-</footer>
-
-</article>
+<ul>
+<li><p>Assignment to a constant that already exists causes warning, but it actually <strong>WILL</strong> be executed. That means, <em>Constants are not really constant</em>.</p></li>
+<li><p>Ruby do not create a constant until the assignment is executed; however, Ruby <em>admit</em> the existance of a variable even if its assignment is not executed but only seen by Ruby interpreter.</p></li>
+</ul>
 
 </div>
 
+
+  <footer>
+    <p class="meta">
+      
   
+
+<span class="byline author vcard">Posted by <span class="fn">brilliun</span></span>
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-12-10T15:59:00+08:00" pubdate data-updated="true">Dec 10<span>th</span>, 2012</time>
+
+
+<span class="categories">Posted in
+  
+    <a class='category' href='/blog/categories/reading/'>Reading</a>
+  
+</span>
+
+
+
+
+<span class="tags">Tagged with
+  
+    <a class='tag' href='/blog/tags/ruby/'>Ruby</a>
+  
+</span>
+
+
+
+      
+
+    </p>
+    
+      <div class="sharing">
+  
+    
+      <a href="http://twitter.com/share" title="Tweet this" class="twitter-share" target="_blank">Tweet</a>
+    
+  
+  
+  
+  
+
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/2012/11/26/the-ruby-programming-language-chapter-3/" title="Previous Post: The Ruby Programming Language- Chapter 3">&laquo; The Ruby Programming Language- Chapter 3</a>
+      
+      
+    </p>
+  </footer>
 </article>
 
+<section>
+  <h1>Comments</h1>
+  
 
+  
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+  
+</section>
 
 </div>
 
@@ -263,7 +312,10 @@
 			var disqus_developer = '0';
       
         
-        var disqus_script = 'count.js';
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://brilliun.github.com/2012/12/10/the-ruby-programming-language-chapter-4/';
+        var disqus_url = 'http://brilliun.github.com/2012/12/10/the-ruby-programming-language-chapter-4/';
+        var disqus_script = 'embed.js';
       
     (function () {
       var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;

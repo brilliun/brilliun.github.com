@@ -3,7 +3,7 @@
   <title><![CDATA[Brilliun]]></title>
   <link href="http://brilliun.github.com/atom.xml" rel="self"/>
   <link href="http://brilliun.github.com/"/>
-  <updated>2012-12-10T15:44:12+08:00</updated>
+  <updated>2012-12-10T17:45:26+08:00</updated>
   <id>http://brilliun.github.com/</id>
   <author>
     <name><![CDATA[brilliun]]></name>
@@ -11,6 +11,75 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+    <entry>
+      
+
+
+
+
+<title type="html"><![CDATA[The Ruby Programming Language Chapter 4]]></title>
+<link href="http://brilliun.github.com/2012/12/10/the-ruby-programming-language-chapter-4/"/>
+<updated>2012-12-10T15:59:00+08:00</updated>
+<id>http://brilliun.github.com/2012/12/10/the-ruby-programming-language-chapter-4</id>
+
+      <content type="html"><![CDATA[<h3>Keyword Literals</h3>
+
+<ul>
+<li><p><code>__FILE__</code>: string that names the file that the Ruby interpreter is executing.</p></li>
+<li><p><code>__LINE__</code>: integer that specifies the line number within <code>__FILE__</code> of the current line of code.</p></li>
+<li><p><code>__ENCODING__</code>: encoding of the current file. (Ruby 1.9)</p></li>
+</ul>
+
+
+<h3>Uninitialized Variables</h3>
+
+<ul>
+<li><p>Class variables: Error</p></li>
+<li><p>Instance variables: Returns <code>nil</code></p></li>
+<li><p>Global variables: Returns <code>nil</code></p></li>
+<li><p>Local variables: Error, usually.</p></li>
+</ul>
+
+
+<h3>Constants</h3>
+
+<ul>
+<li>Like global variables, constants can be used anywhere in a Ruby program without regard to scope.</li>
+</ul>
+
+
+<figure class='code'><div class='highlight'><table><td class='gutter'><pre class='line-numbers'><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="no">CM_PER_INCH</span> <span class="o">=</span> <span class="mi">2</span><span class="o">.</span><span class="mi">54</span>  <span class="c1"># Define a global constant.</span>
+</span><span class='line'><span class="no">CM_PER_INCH</span>         <span class="c1"># Refer to the constant.</span>
+</span><span class='line'><span class="o">::</span><span class="no">CM_PER_INCH</span>       <span class="c1"># A better way to refer to a global constant.</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<ul>
+<li>UNLIKE global variables, constants can be defined by classes and modules and therefore have qualified names, e.g. <code>Math::PI</code></li>
+</ul>
+
+
+<h3>Method Invocations</h3>
+
+<ul>
+<li><p>The value of a method invocation expression is the value of the last evaluated expression in the body of the method.</p></li>
+<li><p>Ruby objects encapsulate instance variables but expose only methods to the outside world.</p></li>
+</ul>
+
+
+<h3>Assignments</h3>
+
+<ul>
+<li><p>Assignment to a constant that already exists causes warning, but it actually <strong>WILL</strong> be executed. That means, <em>Constants are not really constant</em>.</p></li>
+<li><p>Ruby do not create a constant until the assignment is executed; however, Ruby <em>admit</em> the existance of a variable even if its assignment is not executed but only seen by Ruby interpreter.</p></li>
+</ul>
+
+<p><a rel="bookmark" href="http://brilliun.github.com/2012/12/10/the-ruby-programming-language-chapter-4/">&#9875; Permalink</a></p>]]></content>
+    </entry>
   
     <entry>
       
