@@ -47,6 +47,8 @@ When multiple exponentiations are combined into a single expression, they are ev
 
 Integers can be operated by bit-manipulation operators: `~, &, |, ^, <<, >>`.
 
+<!-- more -->
+
 Integers can be treated as arrays to query(but not set) individual bits:
 ``` ruby
 even = (x[0] == 0)    # A number is even if the least-significant bit is 0
