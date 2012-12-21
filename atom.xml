@@ -3,7 +3,7 @@
   <title><![CDATA[Brilliun]]></title>
   <link href="http://brilliun.github.com/atom.xml" rel="self"/>
   <link href="http://brilliun.github.com/"/>
-  <updated>2012-12-10T17:45:26+08:00</updated>
+  <updated>2012-12-22T01:19:48+08:00</updated>
   <id>http://brilliun.github.com/</id>
   <author>
     <name><![CDATA[brilliun]]></name>
@@ -11,6 +11,137 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+    <entry>
+      
+
+
+
+
+<title type="html"><![CDATA[The Ruby Programming Language Chapter 5]]></title>
+<link href="http://brilliun.github.com/2012/12/14/the-ruby-programming-language-chapter-5/"/>
+<updated>2012-12-14T17:03:00+08:00</updated>
+<id>http://brilliun.github.com/2012/12/14/the-ruby-programming-language-chapter-5</id>
+
+      <content type="html"><![CDATA[<h2>Conditionals</h2>
+
+<p>In conditional expressions</p>
+
+<ul>
+<li><p><code>nil</code> are equivalent to <code>false</code></p></li>
+<li><p>Any other value are equivalent to <code>true</code></p></li>
+</ul>
+
+
+<h3>if</h3>
+
+<h4>Return Value</h4>
+
+<p>The return value of an <code>if</code> statement is the value of the last expression in the code that was executed, or <code>nil</code> if no code was executed. Eg.:</p>
+
+<figure class='code'><div class='highlight'><table><td class='gutter'><pre class='line-numbers'><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="nb">name</span> <span class="o">=</span> <span class="k">if</span>    <span class="n">x</span> <span class="o">==</span> <span class="mi">1</span> <span class="k">then</span> <span class="s2">&quot;one&quot;</span>
+</span><span class='line'>       <span class="k">elsif</span> <span class="n">x</span> <span class="o">==</span> <span class="mi">2</span> <span class="k">then</span> <span class="s2">&quot;two&quot;</span>
+</span><span class='line'>       <span class="k">elsif</span> <span class="n">x</span> <span class="o">==</span> <span class="mi">3</span> <span class="k">then</span> <span class="s2">&quot;three&quot;</span>
+</span><span class='line'>       <span class="k">elsif</span> <span class="n">x</span> <span class="o">==</span> <span class="mi">4</span> <span class="k">then</span> <span class="s2">&quot;four&quot;</span>
+</span><span class='line'>       <span class="k">else</span>              <span class="s2">&quot;many&quot;</span>
+</span><span class='line'>       <span class="k">end</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h4>if As a Modifier</h4>
+
+<p>Instead of writing:</p>
+
+<figure class='code'><div class='highlight'><table><td class='gutter'><pre class='line-numbers'><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="k">if</span> <span class="n">message</span> <span class="k">then</span> <span class="nb">puts</span> <span class="n">message</span>    <span class="c1"># Output message, if it is defined</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>we can simply write:</p>
+
+<figure class='code'><div class='highlight'><table><td class='gutter'><pre class='line-numbers'><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="nb">puts</span> <span class="n">message</span> <span class="k">if</span> <span class="n">message</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>However, we have to pay attention to the low precedence of <code>if</code> modifier.
+The following two expressions have different behaviours:</p>
+
+<figure class='code'><div class='highlight'><table><td class='gutter'><pre class='line-numbers'><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="n">y</span> <span class="o">=</span> <span class="n">x</span><span class="o">.</span><span class="n">invert</span> <span class="k">if</span> <span class="n">x</span><span class="o">.</span><span class="n">respond_to?</span> <span class="ss">:invert</span>   <span class="c1"># Equivalent to (y = x.invert) if x.respond_to? :invert)</span>
+</span><span class='line'><span class="n">y</span> <span class="o">=</span> <span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">invert</span> <span class="k">if</span> <span class="n">x</span><span class="o">.</span><span class="n">respond_to?</span> <span class="ss">:invert</span><span class="p">)</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h3>unless</h3>
+
+<p><code>unless</code> is the opposite of <code>if</code>: it executes code only if an associated expression evaluateds to <code>false</code> or <code>nil</code>. Their syntaxs are just the same, except for the <code>elsif</code> clause.</p>
+
+<h3>case</h3>
+
+<figure class='code'><div class='highlight'><table><td class='gutter'><pre class='line-numbers'><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="nb">name</span> <span class="o">=</span> <span class="k">case</span> <span class="n">x</span>
+</span><span class='line'>       <span class="k">when</span> <span class="mi">1</span> <span class="k">then</span> <span class="s2">&quot;one&quot;</span>
+</span><span class='line'>       <span class="k">when</span> <span class="mi">2</span> <span class="k">then</span> <span class="s2">&quot;two&quot;</span>
+</span><span class='line'>       <span class="k">when</span> <span class="mi">3</span> <span class="k">then</span> <span class="s2">&quot;three&quot;</span>
+</span><span class='line'>       <span class="k">else</span> <span class="s2">&quot;many&quot;</span>
+</span><span class='line'>       <span class="k">end</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p><strong>The comarisons are done using</strong> <code>===</code> <strong>operator.</strong> (<em>see p.125</em>)</p>
+
+<p>The main differences <code>case</code> statement in Ruby and <code>swith</code> statement in C-derived language are:</p>
+
+<ul>
+<li><p>No &#8220;fall-through&#8221; behaviour in <code>case</code> statement, multiple conditions are separated by comma.</p></li>
+<li><p>Don&#8217;t have to be compile-time constants, arbitrary runtime expressions are acceptable in Ruby&#8217;s <code>case</code> statement.</p></li>
+</ul>
+
+
+<h2>Loops</h2>
+
+<h3>while and until</h3>
+
+<ul>
+<li><p><code>while</code>: Body code are executed if the conditional expression is anything other than <code>false</code> or <code>nil</code>.</p></li>
+<li><p><code>until</code>: Body code are executed if the conditional expression is <code>false</code> or <code>nil</code>.</p></li>
+</ul>
+
+
+<h3>while and until As Modifiers</h3>
+
+<figure class='code'><div class='highlight'><table><td class='gutter'><pre class='line-numbers'><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="n">x</span> <span class="o">=</span> <span class="mi">0</span>
+</span><span class='line'><span class="nb">puts</span> <span class="n">x</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">1</span> <span class="k">while</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="mi">10</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+
+
+<figure class='code'><div class='highlight'><table><td class='gutter'><pre class='line-numbers'><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="n">a</span> <span class="o">=</span> <span class="o">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="o">]</span>
+</span><span class='line'><span class="nb">puts</span> <span class="n">a</span><span class="o">.</span><span class="n">pop</span> <span class="k">until</span> <span class="n">a</span><span class="o">.</span><span class="n">empty?</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p><strong>The loop condition is evaluated first even though it is writtern after the loop body.</strong></p>
+<p><a rel="bookmark" href="http://brilliun.github.com/2012/12/14/the-ruby-programming-language-chapter-5/">&#9875; Permalink</a></p>]]></content>
+    </entry>
   
     <entry>
       

@@ -1,0 +1,395 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>The Ruby Programming Language Chapter 5 - Brilliun</title>
+  <meta name="author" content="brilliun">
+  <meta name="Generator" content="Jekyll & Octopress (http://octopress.org)">
+
+  
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://brilliun.github.com/2012/12/14/the-ruby-programming-language-chapter-5/">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <script src="/javascripts/octopress.min.js" type="text/javascript"></script>
+  <link href="/atom.xml" rel="alternate" title="Brilliun" type="application/atom+xml">
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+
+   
+  <link href="/octopress-favicon.png" rel="icon">
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">Brilliun</a></h1>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:brilliun.github.com" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+
+
+
+
+
+
+
+
+
+
+
+<article class="hentry " role="article">
+  
+  <header>
+    <h1 class="entry-title">
+
+The Ruby Programming Language Chapter 5
+
+</h1>
+
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-12-14T17:03:00+08:00" pubdate data-updated="true">Dec 14<span>th</span>, 2012</time>
+         &bull; <a rel="bookmark" href="/2012/12/14/the-ruby-programming-language-chapter-5/">Permalink</a>
+      </p>
+    
+  </header>
+
+<div class="entry-content"><h2>Conditionals</h2>
+
+<p>In conditional expressions</p>
+
+<ul>
+<li><p><code>nil</code> are equivalent to <code>false</code></p></li>
+<li><p>Any other value are equivalent to <code>true</code></p></li>
+</ul>
+
+
+<h3>if</h3>
+
+<h4>Return Value</h4>
+
+<p>The return value of an <code>if</code> statement is the value of the last expression in the code that was executed, or <code>nil</code> if no code was executed. Eg.:</p>
+
+<figure class='code'><div class='highlight'><table><td class='gutter'><pre class='line-numbers'><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="nb">name</span> <span class="o">=</span> <span class="k">if</span>    <span class="n">x</span> <span class="o">==</span> <span class="mi">1</span> <span class="k">then</span> <span class="s2">&quot;one&quot;</span>
+</span><span class='line'>       <span class="k">elsif</span> <span class="n">x</span> <span class="o">==</span> <span class="mi">2</span> <span class="k">then</span> <span class="s2">&quot;two&quot;</span>
+</span><span class='line'>       <span class="k">elsif</span> <span class="n">x</span> <span class="o">==</span> <span class="mi">3</span> <span class="k">then</span> <span class="s2">&quot;three&quot;</span>
+</span><span class='line'>       <span class="k">elsif</span> <span class="n">x</span> <span class="o">==</span> <span class="mi">4</span> <span class="k">then</span> <span class="s2">&quot;four&quot;</span>
+</span><span class='line'>       <span class="k">else</span>              <span class="s2">&quot;many&quot;</span>
+</span><span class='line'>       <span class="k">end</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h4>if As a Modifier</h4>
+
+<p>Instead of writing:</p>
+
+<figure class='code'><div class='highlight'><table><td class='gutter'><pre class='line-numbers'><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="k">if</span> <span class="n">message</span> <span class="k">then</span> <span class="nb">puts</span> <span class="n">message</span>    <span class="c1"># Output message, if it is defined</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>we can simply write:</p>
+
+<figure class='code'><div class='highlight'><table><td class='gutter'><pre class='line-numbers'><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="nb">puts</span> <span class="n">message</span> <span class="k">if</span> <span class="n">message</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>However, we have to pay attention to the low precedence of <code>if</code> modifier.
+The following two expressions have different behaviours:</p>
+
+<figure class='code'><div class='highlight'><table><td class='gutter'><pre class='line-numbers'><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="n">y</span> <span class="o">=</span> <span class="n">x</span><span class="o">.</span><span class="n">invert</span> <span class="k">if</span> <span class="n">x</span><span class="o">.</span><span class="n">respond_to?</span> <span class="ss">:invert</span>   <span class="c1"># Equivalent to (y = x.invert) if x.respond_to? :invert)</span>
+</span><span class='line'><span class="n">y</span> <span class="o">=</span> <span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">invert</span> <span class="k">if</span> <span class="n">x</span><span class="o">.</span><span class="n">respond_to?</span> <span class="ss">:invert</span><span class="p">)</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h3>unless</h3>
+
+<p><code>unless</code> is the opposite of <code>if</code>: it executes code only if an associated expression evaluateds to <code>false</code> or <code>nil</code>. Their syntaxs are just the same, except for the <code>elsif</code> clause.</p>
+
+<h3>case</h3>
+
+<figure class='code'><div class='highlight'><table><td class='gutter'><pre class='line-numbers'><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="nb">name</span> <span class="o">=</span> <span class="k">case</span> <span class="n">x</span>
+</span><span class='line'>       <span class="k">when</span> <span class="mi">1</span> <span class="k">then</span> <span class="s2">&quot;one&quot;</span>
+</span><span class='line'>       <span class="k">when</span> <span class="mi">2</span> <span class="k">then</span> <span class="s2">&quot;two&quot;</span>
+</span><span class='line'>       <span class="k">when</span> <span class="mi">3</span> <span class="k">then</span> <span class="s2">&quot;three&quot;</span>
+</span><span class='line'>       <span class="k">else</span> <span class="s2">&quot;many&quot;</span>
+</span><span class='line'>       <span class="k">end</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p><strong>The comarisons are done using</strong> <code>===</code> <strong>operator.</strong> (<em>see p.125</em>)</p>
+
+<p>The main differences <code>case</code> statement in Ruby and <code>swith</code> statement in C-derived language are:</p>
+
+<ul>
+<li><p>No &#8220;fall-through&#8221; behaviour in <code>case</code> statement, multiple conditions are separated by comma.</p></li>
+<li><p>Don&#8217;t have to be compile-time constants, arbitrary runtime expressions are acceptable in Ruby&#8217;s <code>case</code> statement.</p></li>
+</ul>
+
+
+<h2>Loops</h2>
+
+<h3>while and until</h3>
+
+<ul>
+<li><p><code>while</code>: Body code are executed if the conditional expression is anything other than <code>false</code> or <code>nil</code>.</p></li>
+<li><p><code>until</code>: Body code are executed if the conditional expression is <code>false</code> or <code>nil</code>.</p></li>
+</ul>
+
+
+<h3>while and until As Modifiers</h3>
+
+<figure class='code'><div class='highlight'><table><td class='gutter'><pre class='line-numbers'><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="n">x</span> <span class="o">=</span> <span class="mi">0</span>
+</span><span class='line'><span class="nb">puts</span> <span class="n">x</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">1</span> <span class="k">while</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="mi">10</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+
+
+<figure class='code'><div class='highlight'><table><td class='gutter'><pre class='line-numbers'><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="n">a</span> <span class="o">=</span> <span class="o">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="o">]</span>
+</span><span class='line'><span class="nb">puts</span> <span class="n">a</span><span class="o">.</span><span class="n">pop</span> <span class="k">until</span> <span class="n">a</span><span class="o">.</span><span class="n">empty?</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p><strong>The loop condition is evaluated first even though it is writtern after the loop body.</strong></p>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">brilliun</span></span>
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-12-14T17:03:00+08:00" pubdate data-updated="true">Dec 14<span>th</span>, 2012</time>
+
+
+<span class="categories">Posted in
+  
+    <a class='category' href='/blog/categories/reading/'>Reading</a>
+  
+</span>
+
+
+
+
+<span class="tags">Tagged with
+  
+    <a class='tag' href='/blog/tags/ruby/'>Ruby</a>
+  
+</span>
+
+
+
+      
+
+    </p>
+    
+      <div class="sharing">
+  
+    
+      <a href="http://twitter.com/share" title="Tweet this" class="twitter-share" target="_blank">Tweet</a>
+    
+  
+  
+  
+  
+
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/2012/12/10/the-ruby-programming-language-chapter-4/" title="Previous Post: The Ruby Programming Language Chapter 4">&laquo; The Ruby Programming Language Chapter 4</a>
+      
+      
+    </p>
+  </footer>
+</article>
+
+<section>
+  <h1>Comments</h1>
+  
+
+  
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+  
+</section>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/2012/12/14/the-ruby-programming-language-chapter-5/">The Ruby Programming Language Chapter 5</a>
+      </li>
+    
+      <li class="post">
+        <a href="/2012/12/10/the-ruby-programming-language-chapter-4/">The Ruby Programming Language Chapter 4</a>
+      </li>
+    
+      <li class="post">
+        <a href="/2012/11/26/the-ruby-programming-language-chapter-3/">The Ruby Programming Language- Chapter 3</a>
+      </li>
+    
+      <li class="post">
+        <a href="/2012/11/21/ba-yong-hu-dang-cheng-sha-gua/">把用户当成傻瓜</a>
+      </li>
+    
+      <li class="post">
+        <a href="/2012/11/21/ma-lai-xi-ya-gu-jin/">马来西亚-古晋</a>
+      </li>
+    
+  </ul>
+</section>
+
+
+<section>
+  <h1>Latest Tweets</h1>
+  <ul id="tweets" data-user="brilliun" data-count="4" data-replies="false">
+    <li class="loading">Status updating...</li>
+  </ul>
+  
+    <a href="//twitter.com/brilliun" class="twitter-follow-button" data-show-count="false">Follow @brilliun</a>
+  
+</section>
+
+
+<section>
+  <h1>Categories</h1>
+    <ul id="category-list"><li><a href='/blog/categories/ithought'>IThought (1)</a></li><li><a href='/blog/categories/reading'>Reading (4)</a></li><li><a href='/blog/categories/travel'>Travel (1)</a></li></ul>
+</section>
+
+<section>
+  <h1>Tag Cloud</h1>
+  <ul class="tag-cloud">
+    <a style="font-size: 90%" href="/blog/tags/malaysia/">Malaysia</a>
+<a style="font-size: 90%" href="/blog/tags/product-app/">Product/App</a>
+<a style="font-size: 200%" href="/blog/tags/ruby/">Ruby</a>
+<a style="font-size: 90%" href="/blog/tags/ux/">UX</a>
+
+  </ul>
+</section>
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2012 - brilliun -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+<script type="text/javascript">
+      var disqus_shortname = 'brilliun-octopress';
+			var disqus_developer = '0';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://brilliun.github.com/2012/12/14/the-ruby-programming-language-chapter-5/';
+        var disqus_url = 'http://brilliun.github.com/2012/12/14/the-ruby-programming-language-chapter-5/';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+
+
+
+</body>
+</html>
