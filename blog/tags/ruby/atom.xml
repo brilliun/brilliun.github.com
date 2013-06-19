@@ -4,7 +4,7 @@
   <title><![CDATA[Tag: Ruby | Brilliun]]></title>
   <link href="http://brilliun.github.com/blog/tags/ruby/atom.xml" rel="self"/>
   <link href="http://brilliun.github.com/"/>
-  <updated>2013-01-27T00:02:53+08:00</updated>
+  <updated>2013-06-19T21:59:20+09:00</updated>
   <id>http://brilliun.github.com/</id>
   <author>
     <name><![CDATA[brilliun]]></name>
@@ -16,7 +16,7 @@
   <entry>
     <title type="html"><![CDATA[The Ruby Programming Language Chapter 5]]></title>
     <link href="http://brilliun.github.com/2012/12/14/the-ruby-programming-language-chapter-5/"/>
-    <updated>2012-12-14T17:03:00+08:00</updated>
+    <updated>2012-12-14T17:03:00+09:00</updated>
     <id>http://brilliun.github.com/2012/12/14/the-ruby-programming-language-chapter-5</id>
     <content type="html"><![CDATA[<h2>Conditionals</h2>
 
@@ -120,7 +120,7 @@ puts a.pop until a.empty?
   <entry>
     <title type="html"><![CDATA[The Ruby Programming Language Chapter 4]]></title>
     <link href="http://brilliun.github.com/2012/12/10/the-ruby-programming-language-chapter-4/"/>
-    <updated>2012-12-10T15:59:00+08:00</updated>
+    <updated>2012-12-10T15:59:00+09:00</updated>
     <id>http://brilliun.github.com/2012/12/10/the-ruby-programming-language-chapter-4</id>
     <content type="html"><![CDATA[<h3>Keyword Literals</h3>
 
@@ -175,7 +175,7 @@ CM_PER_INCH         # Refer to the constant.
   <entry>
     <title type="html"><![CDATA[The Ruby Programming Language- Chapter 3]]></title>
     <link href="http://brilliun.github.com/2012/11/26/the-ruby-programming-language-chapter-3/"/>
-    <updated>2012-11-26T21:34:00+08:00</updated>
+    <updated>2012-11-26T21:34:00+09:00</updated>
     <id>http://brilliun.github.com/2012/11/26/the-ruby-programming-language-chapter-3</id>
     <content type="html"><![CDATA[<h1>Datatypes and Objects</h1>
 
@@ -531,7 +531,7 @@ numbers = {one: 1, two: 2}
   <entry>
     <title type="html"><![CDATA[The Ruby Programming Language - Chapter 2]]></title>
     <link href="http://brilliun.github.com/2012/11/14/the-ruby-programming-language-chapter-2/"/>
-    <updated>2012-11-14T20:39:00+08:00</updated>
+    <updated>2012-11-14T20:39:00+09:00</updated>
     <id>http://brilliun.github.com/2012/11/14/the-ruby-programming-language-chapter-2</id>
     <content type="html"><![CDATA[<h1>The Structure and Execution of Ruby Programs</h1>
 

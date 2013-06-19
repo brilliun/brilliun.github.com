@@ -3,7 +3,7 @@
   <title><![CDATA[Brilliun]]></title>
   <link href="http://brilliun.github.com/atom.xml" rel="self"/>
   <link href="http://brilliun.github.com/"/>
-  <updated>2013-01-27T00:02:53+08:00</updated>
+  <updated>2013-06-19T21:59:20+09:00</updated>
   <id>http://brilliun.github.com/</id>
   <author>
     <name><![CDATA[brilliun]]></name>
@@ -20,7 +20,7 @@
 
 <title type="html"><![CDATA[The Ruby Programming Language Chapter 5]]></title>
 <link href="http://brilliun.github.com/2012/12/14/the-ruby-programming-language-chapter-5/"/>
-<updated>2012-12-14T17:03:00+08:00</updated>
+<updated>2012-12-14T17:03:00+09:00</updated>
 <id>http://brilliun.github.com/2012/12/14/the-ruby-programming-language-chapter-5</id>
 
       <content type="html"><![CDATA[<h2>Conditionals</h2>
@@ -151,7 +151,7 @@ The following two expressions have different behaviours:</p>
 
 <title type="html"><![CDATA[The Ruby Programming Language Chapter 4]]></title>
 <link href="http://brilliun.github.com/2012/12/10/the-ruby-programming-language-chapter-4/"/>
-<updated>2012-12-10T15:59:00+08:00</updated>
+<updated>2012-12-10T15:59:00+09:00</updated>
 <id>http://brilliun.github.com/2012/12/10/the-ruby-programming-language-chapter-4</id>
 
       <content type="html"><![CDATA[<h3>Keyword Literals</h3>
@@ -220,7 +220,7 @@ The following two expressions have different behaviours:</p>
 
 <title type="html"><![CDATA[The Ruby Programming Language- Chapter 3]]></title>
 <link href="http://brilliun.github.com/2012/11/26/the-ruby-programming-language-chapter-3/"/>
-<updated>2012-11-26T21:34:00+08:00</updated>
+<updated>2012-11-26T21:34:00+09:00</updated>
 <id>http://brilliun.github.com/2012/11/26/the-ruby-programming-language-chapter-3</id>
 
       <content type="html"><![CDATA[<h1>Datatypes and Objects</h1>
@@ -774,7 +774,7 @@ Therefore, for efficiency, you should avoid using literals within loops.</p>
 
 <title type="html"><![CDATA[把用户当成傻瓜]]></title>
 <link href="http://brilliun.github.com/2012/11/21/ba-yong-hu-dang-cheng-sha-gua/"/>
-<updated>2012-11-21T22:37:00+08:00</updated>
+<updated>2012-11-21T22:37:00+09:00</updated>
 <id>http://brilliun.github.com/2012/11/21/ba-yong-hu-dang-cheng-sha-gua</id>
 
       <content type="html"><![CDATA[<p>用户只需要能够满足他们需求的产品，而不需要成为那一领域的专家，不需要涉及其中专业问题的能力和知识。好的产品应该永远把用户当成傻瓜。</p>
@@ -797,7 +797,7 @@ Therefore, for efficiency, you should avoid using literals within loops.</p>
 
 <title type="html"><![CDATA[马来西亚-古晋]]></title>
 <link href="http://brilliun.github.com/2012/11/21/ma-lai-xi-ya-gu-jin/"/>
-<updated>2012-11-21T01:27:00+08:00</updated>
+<updated>2012-11-21T01:27:00+09:00</updated>
 <id>http://brilliun.github.com/2012/11/21/ma-lai-xi-ya-gu-jin</id>
 
       <content type="html"><![CDATA[<p>为了毕业前投的最后一次学会而不得不在毕业两个月后来到这个没什么兴趣的地方&#8211;马来西亚古晋。</p>
@@ -842,7 +842,7 @@ Therefore, for efficiency, you should avoid using literals within loops.</p>
 
 <title type="html"><![CDATA[The Ruby Programming Language - Chapter 2]]></title>
 <link href="http://brilliun.github.com/2012/11/14/the-ruby-programming-language-chapter-2/"/>
-<updated>2012-11-14T20:39:00+08:00</updated>
+<updated>2012-11-14T20:39:00+09:00</updated>
 <id>http://brilliun.github.com/2012/11/14/the-ruby-programming-language-chapter-2</id>
 
       <content type="html"><![CDATA[<h1>The Structure and Execution of Ruby Programs</h1>
